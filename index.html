@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Arpit ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #ff748c; --text: #4a4a4a; --gold: #d4af37; --green: #2ecc71; }
+        body { 
+            margin: 0; padding: 0; background: linear-gradient(135deg, #fff5f6 0%, #ffeef2 100%);
+            font-family: 'Inter', sans-serif; color: var(--text);
+            display: flex; flex-direction: column; align-items: center; min-height: 100vh; overflow-x: hidden;
+        }
+
+        .intro-text { margin-top: 50px; text-align: center; padding: 0 20px; font-family: 'Georgia', serif; font-style: italic; font-size: 22px; color: var(--text); line-height: 1.5; }
+        .intro-name { color: var(--accent); font-weight: bold; font-size: 26px; display: block; margin-top: 10px; }
+
+        .header-image { width: 85%; max-width: 450px; border-radius: 25px; margin-top: 30px; box-shadow: 0 15px 35px rgba(255, 116, 140, 0.25); z-index: 10; border: 6px solid white; }
+        .wish-container { text-align: center; margin-top: 25px; z-index: 10; }
+        .wish-title { font-size: 24px; color: var(--accent); font-weight: bold; }
+
+        .counter-box { margin: 20px 0; text-align: center; z-index: 10; }
+        #seconds-clock { font-size: 28px; font-weight: 300; color: var(--accent); }
+
+        .glass-card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 25px; padding: 30px; max-width: 450px; margin: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); display: none; z-index: 20; }
+        #typewriter { font-size: 16px; line-height: 1.8; font-family: 'Georgia', serif; font-style: italic; color: #333; text-align: left; }
+
+        .shayari { margin-top: 20px; border-top: 1px dashed var(--accent); padding-top: 15px; text-align: center; color: #d63384; font-weight: 600; font-size: 15px; line-height: 1.6; display: none; }
+        .sorry-note { margin-top: 25px; background: rgba(255, 116, 140, 0.1); border-left: 4px solid var(--accent); padding: 15px; font-size: 15px; display: none; text-align: left; line-height: 1.6; }
+
+        .proposal-section { display: none; text-align: center; margin: 30px 0 30px 0; width: 100%; max-width: 400px; }
+        .box-container { position: relative; width: 100px; height: 100px; margin: 0 auto; cursor: pointer; }
+        .box-lid { position: absolute; top: 0; left: 0; width: 100%; height: 20px; background: var(--accent); border-radius: 5px 5px 0 0; z-index: 2; transition: all 0.5s; }
+        .box-body { position: absolute; top: 20px; left: 10px; width: 80%; height: 70px; background: #fff; border: 2px solid var(--accent); border-radius: 0 0 10px 10px; z-index: 1; }
+        
+        #proposalMessage { display: none; background: #fff; border-radius: 20px; padding: 30px; margin-top: 20px; border: 2px solid var(--gold); }
+        .marry-me { font-size: 26px; color: var(--gold); font-weight: bold; margin-bottom: 25px; }
+
+        .btn-group { display: flex; justify-content: center; gap: 20px; margin-top: 20px; position: relative; height: 60px; }
+        .ans-btn { padding: 12px 30px; border-radius: 50px; border: none; font-weight: bold; cursor: pointer; }
+        #yesBtn { background: var(--green); color: white; }
+        #noBtn { background: #95a5a6; color: white; position: absolute; transition: 0.2s all ease-in-out; }
+
+        #specialThings { display: none; margin-top: 30px; text-align: left; }
+        .special-item { background: white; padding: 15px; border-radius: 15px; margin-bottom: 12px; border-left: 5px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.05); opacity: 0; transform: translateX(-20px); transition: 0.5s all ease; }
+        .special-item.visible { opacity: 1; transform: translateX(0); }
+
+.final-ily {
+            display: none; margin-top: 40px; font-family: 'Pacifico', cursive; font-size: 38px; text-align: center;
+            background: linear-gradient(to right, #ff4d6d, #d63384); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; opacity: 0; transform: scale(0.8); transition: 1s all ease;
+        }
+        .final-ily.visible { opacity: 1; transform: scale(1); }
+
+        .hug-btn { background: var(--accent); color: white; border: none; padding: 15px 35px; border-radius: 50px; font-weight: bold; cursor: pointer; margin: 20px 0 60px 0; z-index: 30; }
+        .heart { position: fixed; color: var(--accent); pointer-events: none; animation: floatUp 5s forwards linear; z-index: 100; }
+        @keyframes floatUp { 0% { transform: translateY(100vh) scale(0.5); opacity: 1; } 100% { transform: translateY(-10vh) scale(1.2); opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div id="overlay" onclick="startEverything()" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:999; cursor:pointer;"></div>
+
+    <div class="intro-text">Arpit my love, <br><span class="intro-name">This surprise is for you...</span></div>
+
+    <img src="us.jpg" alt="" class="header-image">
+
+    <div class="wish-container"><div class="wish-title">Happy 1 Month Anniversary! ❤️</div></div>
+
+    <div class="counter-box"><div id="seconds-clock">000,000,000</div><div style="font-size: 9px; opacity: 0.5; letter-spacing: 3px; margin-top: 5px;">SECONDS OF HAPPINESS</div></div>
+
+    <button id="hugBtn" class="hug-btn" onclick="revealEverything()">GIVE ME A HUG 🤗</button>
+
+    <div id="storyCard" class="glass-card">
+        <div id="typewriter"></div>
+        <div id="shayariBox" class="shayari">
+            Aap woh sukoon hain jo mujhe har dua ke baad mila,<br>
+            Ek mahine hi sahi, par aap mein pura jahan mila.<br>
+            Nahi pata kal kya hoga par itna zaroor hai,<br>
+            Ki ab jo bhi hoga, bas aapke saath hi hoga. ❤️
+        </div>
+        
+        <div id="sorryLetter" class="sorry-note">
+            <b>A Small Note:</b><br>
+            Arpit, is ek mahine mein agar maine kabhi bhi aapka dil dukhaya ho, ya meri kisi baat se aap pareshan huye hon, toh I'm really sorry. Mera maqsad kabhi aapko takleef dena nahi tha. Bas aapko khush dekhna chahti hoon. ❤️
+        </div>
+
+        <div id="proposalSection" class="proposal-section">
+            <div class="box-container" onclick="openBox()">
+                <div style="font-size: 30px; margin-bottom: -10px;">🎁</div>
+                <div id="boxLid" class="box-lid"></div>
+                <div class="box-body"></div>
+            </div>
+            
+            <div id="proposalMessage">
+                <div class="marry-me">Will You Marry Me? 💍</div>
+                <div class="btn-group">
+                    <button id="yesBtn" class="ans-btn" onclick="sayYes()">YES! ❤️</button>
+                    <button id="noBtn" class="ans-btn" onmouseover="moveNo()">NO</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="specialThings">
+            <h3 style="color: var(--accent); text-align: center; margin-bottom: 20px;">10 Reasons Why I Love You</h3>
+            <div class="special-item">1. <b>Aapka IIT Wala Junoon:</b> Your passion for your dreams inspires me every single day.</div>
+            <div class="special-item">2. <b>The 9-Minute Magic:</b> That first call on April 7th that changed our world forever.</div>
+            <div class="special-item">3. <b>Aapka Care Karne Ka Tareeka:</b> The silent way you look after me means everything.</div>
+            <div class="special-item">4. <b>Aapki Awaz Ka Sukoon:</b> Your voice is my favorite sound and my greatest peace.</div>
+            <div class="special-item">5. <b>Your Priorities:</b> Thank you for always making me feel like I matter.</div>
+
+<div class="special-item">6. <b>The Future Talk:</b> When you speak about our future, my heart fills with pride.</div>
+            <div class="special-item">7. <b>Aapka Patience:</b> Thank you for handling my silliness with so much patience.</div>
+            <div class="special-item">8. <b>The Way You Call Me:</b> The way you say my name is so special to me.</div>
+            <div class="special-item">9. <b>Your Honesty:</b> Your pure heart is what made me fall for you.</div>
+            <div class="special-item">10. <b>Aapki Smile:</b> Your one smile is enough to make my entire day beautiful. ❤️</div>
+        </div>
+
+        <div id="finalILY" class="final-ily">I Love U Baby! ❤️</div>
+    </div>
+
+    <audio id="bg-music" loop><source src="music.mp3" type="audio/mpeg"></audio>
+
+    <script>
+        const message = "Arpit,\n\nDo you remember when I told you, 'Aap meri pic hi mang lete'? I know that moment made you the happiest person alive! Your reaction made me realize how much I truly mean to you.\n\nThen came that 'I like you' message... I tried to hide it by deleting it, but I’m secretly so glad you saw it. Our 9-minute call on April 7th was the magical moment when everything just clicked.\n\nAnd your promise—'IIT ke baad seedha shaadi ka proposal leke aaunga'—is still the most special thing I've ever heard. Thank you for this amazing month and for making me your priority. I love you more than you can ever imagine. Happy Anniversary! ❤️\n\n";
+
+        function startEverything() { document.getElementById('bg-music').play().catch(e => {}); document.getElementById('overlay').style.display = 'none'; }
+        function updateClock() { const diff = Math.floor((new Date() - new Date("2026-04-07T00:00:00")) / 1000); document.getElementById("seconds-clock").innerText = diff.toLocaleString(); }
+
+        function revealEverything() {
+            document.getElementById('hugBtn').style.display = 'none';
+            const card = document.getElementById('storyCard'); card.style.display = 'block';
+            let i = 0;
+            function type() {
+                if (i < message.length) { document.getElementById("typewriter").innerHTML += message.charAt(i) === '\n' ? "<br>" : message.charAt(i); i++; setTimeout(type, 50); } 
+                else {
+                    document.getElementById('shayariBox').style.display = 'block';
+                    setTimeout(() => { document.getElementById('sorryLetter').style.display = 'block'; }, 1000);
+                    setTimeout(() => { document.getElementById('proposalSection').style.display = 'block'; }, 2500);
+                }
+            }
+            type();
+        }
+
+        function openBox() { document.getElementById('boxLid').style.transform = 'translateY(-40px) rotate(-10deg)'; document.getElementById('boxLid').style.opacity = '0'; setTimeout(() => { document.getElementById('proposalMessage').style.display = 'block'; }, 500); }
+        function moveNo() { const btn = document.getElementById('noBtn'); btn.style.left = Math.random() * 70 + '%'; btn.style.top = Math.random() * 70 + '%'; }
+
+        function sayYes() {
+            document.getElementById('proposalSection').style.display = 'none';
+            document.getElementById('specialThings').style.display = 'block';
+            const items = document.querySelectorAll('.special-item');
+            items.forEach((item, index) => { 
+                setTimeout(() => { 
+                    item.classList.add('visible'); 
+                    if (index === items.length - 1) {
+                        setTimeout(() => {
+                            const ily = document.getElementById('finalILY');
+                            ily.style.display = 'block';
+                            setTimeout(() => { ily.classList.add('visible'); }, 50);
+
+}, 1000);
+                    }
+                }, index * 800); 
+            });
+            for(let i=0; i<30; i++) { setTimeout(() => { const h = document.createElement('div'); h.className = 'heart'; h.innerHTML = '❤️'; h.style.left = Math.random() * 100 + 'vw'; h.style.animation = 'floatUp 3s forwards'; document.body.appendChild(h); }, i * 100); }
+        }
+        window.onload = () => { setInterval(updateClock, 1000); };
+    </script>
+</body>
+</html>
